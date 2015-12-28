@@ -1,0 +1,29 @@
+<template name="team">
+    {{#if isEditingTeam}}
+      <form class="ui segment editingTeam-form form">
+        <div class="field">
+  				<input type="text" name="teamName" value="{{name}}">
+  			</div>
+  			<div class="field">
+  				<button class="ui blue button submit" type="submit">Save</button>
+  				<button class="ui black button cancel-editing">Close</button>
+  			</div>
+      </form>
+      {{else}}
+      <div class="item">
+        <div class="right floated content">
+          <button class="ui circular button remove-team">
+            <i class="remove circle red icon"></i>
+              Remove
+          </button>
+          <button class="ui circular button edit-team">
+            <i class="edit icon"></i>
+              Edit
+          </button>
+        </div>
+        <div class="content">
+          {{name}}
+        </div>
+      </div>
+      {{/if}}
+</template>

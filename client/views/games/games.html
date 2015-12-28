@@ -1,0 +1,33 @@
+<template name="games">
+  <h3>The Games</h3>
+    {{#if isCreatingGame}}
+    <form class="ui segment create-game form">
+      <div class="field">
+        <select class="" name="teamOne">
+          {{#each teams}}
+            <option value="{{_id}}">{{name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <h2>VS</h2>
+      <div class="field">
+        <select class="" name="teamTwo">
+          {{#each teams}}
+            <option value="{{_id}}">{{name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="field">
+				<button class="ui circular blue button submit" type="submit">Submit</button>
+				<button class="ui circular black button cancel">Cancel</button>
+			</div>
+    </form>
+    {{else}}
+    <button class="small ui circular red button create">Create Game</button>
+    {{/if}}
+    <div class="ui segment">
+        {{#each games}}
+          {{> game}}
+        {{/each}}
+    </div>
+</template>

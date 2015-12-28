@@ -1,0 +1,26 @@
+<template name="teams">
+	<h2>Teams App</h2>
+	{{#if isCreatingTeam}}
+		<form class="ui  segment create-team form">
+			<div class="field">
+				<input type="text" name="teamName" placeholder="Add a new team">
+			</div>
+			<div class="field">
+				<button class="ui  circular blue button submit" type="submit">Submit</button>
+				<button class="ui circular black button cancel">Cancel</button>
+			</div>
+		</form>
+		{{else}}
+			<button class="small ui circular red button create">Create Team</button>
+		{{/if}}
+
+		<!-- Team template -->
+		<div class="ui segment">
+			<h3 class="red title">The Teams  ({{teamsCount}})</h3>
+			    <div class="ui middle aligned divided list">
+						{{#each teams}}
+							{{> team}}
+						{{/each}}
+				</div>
+		</div>
+</template>

@@ -1,0 +1,15 @@
+<template name="menu">
+  <div class="ui secondary pointing menu">
+  <a href="/" class="{{isActiveRoute regex='games'}} item">
+    Games
+  </a>
+  <a href="/teams" class="{{isActiveRoute regex='teams'}} item">
+    Teams
+  </a>
+  <div class="right menu">
+    <a class="ui item">
+      {{> loginButtons}}
+    </a>
+  </div>
+</div>
+</template>

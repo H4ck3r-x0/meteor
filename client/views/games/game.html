@@ -1,0 +1,57 @@
+<template name="game">
+  <table class="ui grey selectable fixed table">
+    <thead>
+      <tr>
+        <th>Team One</th>
+        <th>Team Two</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#if completed}}
+        <tr class="positive">
+          <td>{{teams.[0].name}} <span>({{teams.[0].score}})</span></td>
+          <td>{{teams.[1].name}} <span>({{teams.[1].score}})</span></td>
+          <td class="center aligned"> <span>Game has completed</span></td>
+        </tr>
+      {{else}}
+      <tr>
+        <td>
+          {{teams.[0].name}}
+          <span>
+            <a href="#">
+                <i class="add circle icon one-plus"></i>
+            </a>
+            ({{teams.[0].score}})
+            <a href="#">
+                <i class="minus circle red icon one-minus"></i>
+            </a>
+          </span>
+        </td>
+        <td>
+          {{teams.[1].name}}
+          <span>
+            <a href="#">
+                <i class="add circle icon two-plus"></i>
+            </a>
+            ({{teams.[1].score}})
+            <a href="#">
+                <i class="minus circle red icon two-minus"></i>
+            </a>
+          </span>
+        </td>
+        <td >
+          <button class="mini ui circular blue button finish-game">
+            <i class="checkmark icon"></i>
+              Finish
+          </button>
+          <button class="mini ui circular  button delete-game">
+            <i class="remove circle red icon"></i>
+              Remove
+          </button>
+        </td>
+      </tr>
+      {{/if}}
+    </tbody>
+  </table>
+</template>
